@@ -1,5 +1,5 @@
 export default function taskblock(trueOrFalse) {
-    const task, task2;
+    const task , task2;
     
     if (trueOrFalse) {
 	task = true;
