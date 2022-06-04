@@ -31,12 +31,14 @@ function countStudents(path) {
 
       delete fields.field;
 
-      for(const key in Object.keys(fields)){
-          msg = `Number of students in ${key}: ${ fields[key].length}, List: ${fields[key].join(', ')}`;
+      for (const key in Object.keys(fields)) {
+        msg = `Number of students in ${key}: ${
+          fields[key].length
+        }, List: ${fields[key].join(", ")}`;
 
-          console.log(msg);
+        console.log(msg);
 
-          response.push(msg);
+        response.push(msg);
       }
       resolve(response);
     });
