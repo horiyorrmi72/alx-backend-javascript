@@ -135,8 +135,4 @@ Promise.any([promise1, promise2])
 
 ## Summary
 
-Promises are a powerful tool for managing asynchronous operations in JavaScript. They provide a structured way to handle the results of asynchronous operations, enabling more readable and maintainable code.
-
---- 
-
-Let me know if you need any further adjustments!
+Promises are a powerful tool for managing asynchronous operations in JavaScript.
