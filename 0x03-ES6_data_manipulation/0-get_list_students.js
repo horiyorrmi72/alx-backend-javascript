@@ -1,18 +1,18 @@
 export default function getListStudents() {
-  myDataSet = [{
+  const myDataSet = [{
     id: 1,
-    firstName: "Guillaume",
-    location: "San Francisco",
+    firstName: 'Guillaume',
+    location: 'San Francisco',
   },
-    {
-      id: 2,
-      firstName: "James",
-      location: "Columbia",
-    },
-    {
-      id: 5,
-      firstName: "Serena",
-      location: "San Francisco",
-    }];
-    return myDataSet;
-}
+  {
+    id: 2,
+    firstName: 'James',
+    location: 'Columbia',
+  },
+  {
+    id: 5,
+    firstName: 'Serena',
+    location: 'San Francisco',
+  }];
+  return myDataSet;
+} 
