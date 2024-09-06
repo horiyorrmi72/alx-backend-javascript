@@ -5,7 +5,7 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
       const newGrade = newGrades.filter((y) => y.studentId === x.id);
       const student = x;
       if (newGrade.length === 1) student.grade = newGrade[0].grade;
-      else student.grade = "N/A";
+      else student.grade = 'N/A';
       return student;
     });
 }
