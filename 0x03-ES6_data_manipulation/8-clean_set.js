@@ -1,5 +1,5 @@
 export default function cleanSet(set, startString) {
-  if (!startString || startString.length === 0) return '';
+  if (!startString || startString.length === 0 || typeof startString !== 'string') return '';
 
   let result = '';
   set.forEach((value) => {
@@ -7,5 +7,6 @@ export default function cleanSet(set, startString) {
       result += `${value.slice(startString.length)}-`;
     }
   });
+
   return result.slice(0, -1);
 }
