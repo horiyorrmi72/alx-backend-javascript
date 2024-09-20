@@ -21,11 +21,10 @@ export default class StudentController {
 
   static async getAllStudentsByMajor(request, response) {
     try {
-      const availableMajors = ['CS', 'SWE'];
       const dbFile = process.argv[2];
       const { major } = request.params;
 
-      if (!major || !availableMajors.includes(major)) {
+      if (!(major || major === 'CS' || major === 'SWE')) {
         return response
           .status(500)
           .json({ message: 'Major Parameter must be CS or SWE' });
