@@ -1,18 +1,18 @@
 export interface Student {
     firstName : string;
-    lastNAme : string;
+    lastName : string;
     age : number;
     location : string;
 }
 const studentA: Student ={
     firstName : "Harry",
-    lastNAme :"Yoon",
+    lastName :"Yoon",
     age: 22,
     location:"Seoul, South Korea",
 };
 const studentB: Student ={
     firstName:"Anjali",
-    lastNAme:"Prajapati",
+    lastName:"Prajapati",
     age:22,
     location:"Lodz, Poland",
 };
