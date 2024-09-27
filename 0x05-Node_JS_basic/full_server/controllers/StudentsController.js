@@ -13,9 +13,12 @@ export default class StudentController {
           const studentList = data[field].join(', ');
           responseText += `Number of sudents in ${field}: ${data[field].length}. List:${studentList} \n`;
         });
-      return response.status(200).send(responseText.trim());
+      response.status(200);
+      response.send(responseText.trim());
+      return;
     } catch (error) {
-      return response.status(500).send('Cannot load database');
+      response.status(500);
+      response.send('Cannot load database');
     }
   }
 
@@ -24,23 +27,25 @@ export default class StudentController {
     const dbFile = process.argv[2];
 
     if (major !== 'CS' && major !== 'SWE') {
-      return response
-        .status(500)
-        .json({ message: 'Major Parameter must be CS or SWE' });
+      response.status(500);
+      response.send('Major Parameter must be CS or SWE');
+      return;
     }
     try {
       const studentsData = await readDatabase(dbFile);
       const students = studentsData[major];
       if (!students) {
-        return response
-          .status(500)
-          .send(`No students found for major : ${major}`);
+        response.status(500);
+        response.send(`No students found for major : ${major}`);
+        return;
       }
       const studentList = students.join(', ');
       const responseText = `List: ${studentList}`;
-      return response.send(responseText);
+      response.send(responseText);
+      return;
     } catch (error) {
-      return response.status(500).send('Cannot load the database');
+      response.status(500);
+      response.send('Cannot load the database');
     }
   }
 }
