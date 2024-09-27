@@ -9,7 +9,7 @@ export default function readDatabase(filepath) {
       const studentsByMajor = {};
       const eachLine = data.trim().split('\n');
       eachLine.forEach((line, index) => {
-        // skip the first line (the header)
+        // Skip the first line (the header)
         if (index === 0) return;
         const [firstname, , , major] = line.split(',');
 
