@@ -22,12 +22,12 @@ describe('sendPaymentRequestToApi', () => {
 		consoleSpy.restore();
 	});
 
-	// it('calls Utils.calculateNumber with type of SUM and 100,20 as arguments', () => {
-	// 	const calculateNumberSpy = sinon.spy(Utils, 'calculateNumber');
-	// 	sendPaymentRequestToApi(100, 20);
-	// 	expect(calculateNumberSpy.calledWith('SUM', 100, 20)).to.be.true;
-	// 	expect(calculateNumberSpy.calledOnce).to.be.true;
+	it('calls Utils.calculateNumber with type of SUM and 100,20 as arguments', () => {
+		const calculateNumberSpy = sinon.spy(Utils, 'calculateNumber');
+		sendPaymentRequestToApi(100, 20);
+		expect(calculateNumberSpy.calledWith('SUM', 100, 20)).to.be.true;
+		expect(calculateNumberSpy.calledOnce).to.be.true;
 
-	// 	calculateNumberSpy.restore();
-	// });
+		calculateNumberSpy.restore();
+	});
 });
