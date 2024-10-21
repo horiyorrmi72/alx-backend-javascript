@@ -9,25 +9,14 @@ describe('sendPaymentRequestToApi', () => {
 			.stub(Utils, 'calculateNumber')
 			.returns(10);
 
-		const consoleSpy = sinon.spy(console, 'log');
-
-		sendPaymentRequestToApi(100, 20);
+        const consoleSpy = sinon.spy(console, 'log');
+        sendPaymentRequestToApi(100, 20);
 
 		expect(calculateNumberStub.calledWith('SUM', 100, 20)).to.be.true;
 		expect(calculateNumberStub.calledOnce).to.be.true;
-
 		expect(consoleSpy.calledWithExactly('The total is: 10')).to.be.true;
 
 		calculateNumberStub.restore();
 		consoleSpy.restore();
-	});
-
-	it('calls Utils.calculateNumber with type of SUM and 100,20 as arguments', () => {
-		const calculateNumberSpy = sinon.spy(Utils, 'calculateNumber');
-		sendPaymentRequestToApi(100, 20);
-		expect(calculateNumberSpy.calledWith('SUM', 100, 20)).to.be.true;
-		expect(calculateNumberSpy.calledOnce).to.be.true;
-
-		calculateNumberSpy.restore();
 	});
 });
