@@ -1,14 +1,12 @@
 const sinon = require('sinon');
-const { expect } = sinon;
+const { expect } = require('chai');
 const getPaymentTokenFromAPI = require('./6-payment_token');
 
-describe('getPaymentTokenFromAPI', (done) => {
-	afterEach(() => {});
-
-	it('calls getPaymentTokenFromAPI and returns "{data: Successful response from the API }" if the value of success is equal "true ', () => {
+describe('getPaymentTokenFromAPI', () => {
+	it('calls getPaymentTokenFromAPI and returns "{data: Successful response from the API }" if the value of success is true', (done) => {
 		getPaymentTokenFromAPI(true)
 			.then((apiResponse) => {
-				expect(apiResponse).to.include({
+				expect(apiResponse).to.deep.include({
 					data: 'Successful response from the API',
 				});
 				done();
